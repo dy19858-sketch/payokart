@@ -16,14 +16,11 @@ const BRAND = "Payokart";
 
 // ---------- Helpers ----------
 function isOrderWindowOpen() {
-  const h = new Date().getHours();
-  const open = Number(process.env.ORDER_OPEN_HOUR || 4);
-  const close = Number(process.env.ORDER_CLOSE_HOUR || 8);
-  return h >= open && h < close;
+  return true;
 }
 
 function getPrices() {
-  return { cow: 60, buffalo: 80, mix: 70 };
+  return { cow: 50, buffalo: 60, mix: 70 };
 }
 
 function calcCharges(litres) {
