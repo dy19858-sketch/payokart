@@ -16,7 +16,7 @@ const BRAND = "Payokart";
 
 // ---------- Helpers ----------
 function isOrderWindowOpen() {
-  return true;
+  return true; // 24x7 open
 }
 
 function getPrices() {
