@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Order - <%= brand %></title>
+</head>
+<body style="font-family:system-ui; padding:16px;">
+  <h2>Order Milk - <%= brand %></h2>
+
+  <% if(!open){ %>
+    <p><b>Order window closed.</b> Try morning.</p>
+  <% } %>
+
+  <form method="post" action="/order" style="display:grid; gap:10px; max-width:420px;">
+    <input name="customer_name" placeholder="Your Name" required />
+    <input name="phone" placeholder="Phone" required />
+    <input name="area" placeholder="Area" required />
+    <input name="address" placeholder="Full Address" required />
+
+    <select name="milk_type" required>
+      <option value="cow">Cow Milk (₹<%= prices.cow %>/L)</option>
+      <option value="buffalo">Buffalo Milk (₹<%= prices.buffalo %>/L)</option>
+      <option value="mix">Mix (₹<%= prices.mix %>/L)</option>
+    </select>
+
+    <input name="litres" type="number" step="0.5" min="0.5" placeholder="Litres" required />
+
+    <select name="payment_mode">
+      <option value="cod">Cash on Delivery</option>
+      <option value="upi">UPI (QR)</option>
+    </select>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+  <p style="margin-top:12px;"><a href="/">Back</a></p>
+</body>
+</html>
