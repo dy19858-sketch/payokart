@@ -1,0 +1,16 @@
+package.json
+{
+  "name": "payokart",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ejs": "^3.1.10",
+    "better-sqlite3": "^11.1.0",
+    "dotenv": "^16.4.5",
+    "qrcode": "^1.5.3",
+    "node-cron": "^3.0.3"
+  }
+}
