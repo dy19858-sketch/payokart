@@ -121,6 +121,12 @@ cron.schedule("0 0 * * *", () => {
   // future use
 });
 
-app.listen(PORT, () =>
-  console.log(`${BRAND} running on port ${PORT}`)
-);
+// Home check
+app.get("/", (req, res) => {
+  res.send("Payokart server is running ✅");
+});
+
+// Start server (ALWAYS LAST)
+app.listen(PORT, () => {
+  console.log(`${BRAND} running on port ${PORT}`);
+});
