@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Success - <%= brand %></title>
+</head>
+<body style="font-family:system-ui; padding:16px;">
+  <h2>Order Placed ✅ - <%= brand %></h2>
+  <p><b>Total Payable:</b> ₹<%= total_amount %></p>
+
+  <% if(qrDataUrl){ %>
+    <h3>Pay via UPI</h3>
+    <img src="<%= qrDataUrl %>" style="max-width:320px;width:100%;border:1px solid #ddd;border-radius:10px;" />
+    <p>Scan in PhonePe / GPay / Paytm</p>
+  <% } else { %>
+    <p>COD selected. Delivery soon.</p>
+  <% } %>
+
+  <p><a href="/">Home</a></p>
+</body>
+</html>
