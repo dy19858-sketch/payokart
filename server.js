@@ -47,7 +47,11 @@ function buildUpiLink({ vpa, name, amount, note }) {
 
 // ---------- Pages ----------
 app.get("/order", (req, res) => {
-  res.send("<h2>Order page OK</h2>");
+  res.render("order", {
+    brand: BRAND,
+    open: isOrderWindowOpen(),
+    prices: getPrices(),
+  });
 });
 app.get("/", (req, res) => {
   res.send(`
