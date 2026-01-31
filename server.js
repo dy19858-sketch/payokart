@@ -46,17 +46,16 @@ function buildUpiLink({ vpa, name, amount, note }) {
 }
 
 // ---------- Pages ----------
-app.get("/", (req, res) =>
-  res.render("index", { brand: BRAND, open: isOrderWindowOpen() })
-);
-
-app.get("/order", (req, res) =>
-  res.render("order", {
-    brand: BRAND,
-    open: isOrderWindowOpen(),
-    prices: getPrices(),
-  })
-);
+app.get("/order", (req, res) => {
+  res.send("<h2>Order page OK</h2>");
+});
+app.get("/", (req, res) => {
+  res.send(`
+    <h1>Payokart 🥛</h1>
+    <p>Server OK</p>
+    <a href="/order">Order Now</a>
+  `);
+});
 
 // ---------- Create Order ----------
 app.post("/order", async (req, res) => {
