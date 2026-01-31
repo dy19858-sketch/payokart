@@ -52,7 +52,6 @@ app.get("/order", (req, res) => {
     open: isOrderWindowOpen(),
     prices: getPrices(),
   });
-});
 app.get("/", (req, res) => {
   res.send(`
     <h1>Payokart 🥛</h1>
