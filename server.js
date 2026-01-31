@@ -14,11 +14,10 @@ app.set("view engine", "ejs");
 const PORT = process.env.PORT || 3000;
 const BRAND = "Payokart";
 
-// ---------- Helpers ----------
+// -------- Helpers --------
 function isOrderWindowOpen() {
   return true; // 24x7 open
 }
-
 function getPrices() {
   return { cow: 50, buffalo: 60, mix: 70 };
 }
@@ -116,11 +115,6 @@ app.post("/order", async (req, res) => {
 // ---------- Daily reset (optional) ----------
 cron.schedule("0 0 * * *", () => {
   // future use
-});
-
-// Home check
-app.get("/", (req, res) => {
-  res.send("Payokart server is running ✅");
 });
 
 // Start server (ALWAYS LAST)
